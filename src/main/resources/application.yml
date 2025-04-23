@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: aws-cognito
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            scope:
+              - phone
+              - openid
+              - email
+            # Spring Security by default uses a redirect-uri in the format: {baseUrl}/login/oauth2/code/{registrationId}
+            # For example: http://localhost:8080/login/oauth2/code/cognito
+            # See more: https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html#oauth2login-sample-redirect-uri
+            redirect-uri: ${REDIRECT_URI}
+        provider:
+          cognito:
+            issuerUri: ${ISSUER_URI}
+            user-name-attribute: username
+
+cognito:
+  domain: ${DOMAIN}
+  logoutRedirectUrl: ${REDIRECT_URI}
+  userPoolClientId: ${USER_POOL_CLIENT_ID}
+
+server:
+  port: 9200
