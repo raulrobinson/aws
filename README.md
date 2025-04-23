@@ -16,6 +16,7 @@ AWS Cognito is a service that provides authentication, authorization, and user m
 - Security: AWS Cognito provides built-in security features, including encryption of data at rest and in transit, to protect user information.
 - Integration with AWS Services: AWS Cognito integrates seamlessly with other AWS services, such as AWS Lambda, Amazon API Gateway, and Amazon S3, to build serverless applications.
 
+![flow-aws-cognito-basic.png](flow-aws-cognito-basic.png)
 
 #### Getting Started
 
